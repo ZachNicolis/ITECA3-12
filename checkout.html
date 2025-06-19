@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-2-C Platform - Checkout</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; background: linear-gradient(to bottom, #f0f4ff, #ffffff); min-height: 100vh; }
+        nav { position: fixed; bottom: 0; width: 100%; background: #ff6f00; padding: 0.5rem; z-index: 1000; }
+        .nav-menu ul { list-style: none; display: flex; justify-content: space-around; }
+        .nav-menu a { text-decoration: none; color: #fff; font-weight: bold; font-size: 1rem; }
+        .nav-menu a:hover { color: #ffd700; }
+        .checkout-container { max-width: 400px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .checkout-container h1 { text-align: center; margin-bottom: 1.5rem; font-size: 2rem; color: #007bff; }
+        .checkout-form { display: flex; flex-direction: column; gap: 1rem; }
+        .checkout-form label { font-size: 1rem; color: #333; }
+        .checkout-form input { padding: 0.5rem; font-size: 1rem; border: 1px solid #00c4b4; border-radius: 5px; }
+        .checkout-form input:focus { border-color: #ff6f00; outline: none; }
+        .checkout-form button { padding: 0.75rem; background: #ff6f00; color: #fff; border: none; border-radius: 25px; cursor: pointer; font-size: 1.2rem; transition: transform 0.3s, background 0.3s; }
+        .checkout-form button:hover { background: #e65b00; transform: scale(1.05); }
+        .order-summary { padding: 1rem; background: #00c4b4; border-radius: 10px; color: #fff; }
+        footer { text-align: center; padding: 1rem; background: #ff6f00; color: #fff; }
+        footer a { color: #ffd700; text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { text-decoration: underline; }
+        @media (min-width: 768px) {
+            nav { position: static; background: none; }
+            .nav-menu { position: sticky; top: 0; left: 0; width: 200px; background: #007bff; padding: 1rem; }
+            .nav-menu ul { flex-direction: column; }
+            .nav-menu a { color: #fff; }
+            .content { margin-left: 200px; }
+            .checkout-container { padding: 2rem; }
+            footer { display: flex; justify-content: center; gap: 1rem; }
+        }
+        @media (min-width: 1200px) {
+            .checkout-container { max-width: 800px; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .checkout-form { grid-column: 1; }
+            .order-summary { grid-column: 2; }
+            .nav-menu { width: 250px; }
+            .content { margin-left: 250px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <section class="checkout-container">
+            <h1>Checkout</h1>
+            <form class="checkout-form">
+                <label for="card">Card Number</label>
+                <input type="text" id="card" name="card" required>
+                <label for="address">Shipping Address</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St, Johannesburg" required>
+                <button type="submit">Complete Purchase</button>
+            </form>
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <p>Item: Smartphone</p>
+                <p>Price: R5,000.00</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms of Service</a>
+        <p>© 2025 C-2-C Platform</p>
+    </footer>
+    <script>
+        document.querySelector('.checkout-form button').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Processing payment...');
+        });
+    </script>
+</body>
+</html>

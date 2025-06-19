@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; background: linear-gradient(to bottom, #f0f4ff, #ffffff); min-height: 100vh; }
+        nav { position: fixed; bottom: 0; width: 100%; background: #ff6f00; padding: 0.5rem; z-index: 1000; }
+        .nav-menu ul { list-style: none; display: flex; justify-content: space-around; }
+        .nav-menu a { text-decoration: none; color: #fff; font-weight: bold; font-size: 1rem; }
+        .nav-menu a:hover { color: #ffd700; }
+        .dashboard-container { padding: 1rem; }
+        .dashboard-container h1 { color: #007bff; font-size: 2rem; text-align: center; }
+        .widget { background: #fff; border-radius: 10px; padding: 1rem; margin: 0.5rem 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .widget:hover { transform: translateY(-5px); }
+        .widget h2 { color: #00c4b4; }
+        footer { text-align: center; padding: 1rem; background: #ff6f00; color: #fff; }
+        footer a { color: #ffd700; text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { text-decoration: underline; }
+        @media (min-width: 768px) {
+            nav { position: static; background: none; }
+            .nav-menu { position: sticky; top: 0; left: 0; width: 200px; background: #007bff; padding: 1rem; }
+            .nav-menu ul { flex-direction: column; }
+            .nav-menu a { color: #fff; }
+            .content { margin-left: 200px; }
+            .dashboard-container { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+            footer { display: flex; justify-content: center; gap: 1rem; }
+        }
+        @media (min-width: 1200px) {
+            .dashboard-container { grid-template-columns: 1fr 1fr 1fr; }
+            .widget { padding: 1.5rem; }
+            .nav-menu { width: 250px; }
+            .content { margin-left: 250px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="admin-users.html">Users</a></li>
+                <li><a href="admin-moderation.html">Moderation</a></li>
+                <li><a href="admin-analytics.html">Analytics</a></li>
+                <li><a href="admin-settings.html">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <section class="dashboard-container">
+            <h1>Admin Dashboard</h1>
+            <div class="widget">
+                <h2>Users</h2>
+                <p>Total: 1,234</p>
+            </div>
+            <div class="widget">
+                <h2>Transactions</h2>
+                <p>Today: R50,000.00</p>
+            </div>
+            <div class="widget">
+                <h2>Alerts</h2>
+                <p>3 new reports</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms of Service</a>
+        <p>© 2025 C-2-C Admin</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.widget').forEach(widget => {
+            widget.addEventListener('mouseenter', () => widget.style.transform = 'translateY(-5px)');
+            widget.addEventListener('mouseleave', () => widget.style.transform = 'translateY(0)');
+        });
+    </script>
+</body>
+</html>

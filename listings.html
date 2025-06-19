@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-2-C Platform - Listings</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; background: linear-gradient(to bottom, #f0f4ff, #ffffff); min-height: 100vh; }
+        nav { position: fixed; bottom: 0; width: 100%; background: #ff6f00; padding: 0.5rem; z-index: 1000; }
+        .nav-menu ul { list-style: none; display: flex; justify-content: space-around; }
+        .nav-menu a { text-decoration: none; color: #fff; font-weight: bold; font-size: 1rem; }
+        .nav-menu a:hover { color: #ffd700; }
+        .filters { padding: 1rem; background: #00c4b4; border-radius: 10px; margin: 1rem; }
+        .filters select { width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 5px; font-size: 1rem; }
+        .listings { padding: 1rem; margin-bottom: 5rem; }
+        .listing-card { background: #fff; border-radius: 10px; margin: 0.5rem 0; padding: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .listing-card:hover { transform: translateY(-5px); }
+        .listing-card img { max-width: 100%; height: auto; border-radius: 10px; }
+        footer { text-align: center; padding: 1rem; background: #ff6f00; color: #fff; }
+        footer a { color: #ffd700; text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { text-decoration: underline; }
+        @media (min-width: 768px) {
+            nav { position: static; background: none; }
+            .nav-menu { position: sticky; top: 0; left: 0; width: 200px; background: #007bff; padding: 1rem; }
+            .nav-menu ul { flex-direction: column; }
+            .nav-menu a { color: #fff; }
+            .content { margin-left: 200px; }
+            .filters { width: 200px; float: left; margin-right: 1rem; }
+            .listings { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+            footer { display: flex; justify-content: center; gap: 1rem; }
+        }
+        @media (min-width: 1200px) {
+            .filters { width: 250px; }
+            .listings { grid-template-columns: 1fr 1fr 1fr; }
+            .nav-menu { width: 250px; }
+            .content { margin-left: 250px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <section class="filters">
+            <select>
+                <option>Category</option>
+                <option>Electronics</option>
+                <option>Clothing</option>
+            </select>
+            <select>
+                <option>Price Range</option>
+                <option>R0-R2000</option>
+                <option>R2001-R5000</option>
+                <option>R5001-R10000</option>
+                <option>R10001+</option>
+            </select>
+        </section>
+        <section class="listings">
+            <div class="listing-card">
+                <h2>Smartphone</h2>
+                <p>R5,000.00 - Electronics</p>
+            </div>
+            <div class="listing-card">
+                <h2>Leather Jacket</h2>
+                <p>R1,200.00 - Clothing</p>
+            </div>
+            <div class="listing-card">
+                <h2>Laptop</h2>
+                <p>R12,000.00 - Electronics</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms of Service</a>
+        <p>© 2025 C-2-C Platform</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.listing-card').forEach(card => {
+            card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-5px)');
+            card.addEventListener('mouseleave', () => card.style.transform = 'translateY(0)');
+        });
+    </script>
+</body>
+</html>
